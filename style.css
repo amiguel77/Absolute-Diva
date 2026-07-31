@@ -9,13 +9,18 @@ html{
     scroll-behavior:smooth;
 }
 
+header {
+    
+    background-color: #FFF6FD;
+}
+
 body{
 
     font-family:Segoe UI,Tahoma,Geneva,Verdana,sans-serif;
 
     background:#FFE2EC;
 
-    color:#ffffff;
+    color:#FFBCD9;
 
     overflow:hidden;
 
@@ -293,7 +298,7 @@ button:hover{
 
     max-width:750px;
 
-    color:#cbd5e1;
+    color:#FFBCD9;
 
     font-size:20px;
 
@@ -722,13 +727,21 @@ button:hover{
 }
 /* FOOTER */
 .made-with-love {
+    
     position: fixed;
+    
     bottom: 15px;
+    
     left: 0;
+    
     width: 100%;
+    
     text-align: center;
+    
     font-size: 0.9rem;
+    
     color: #FFBCD9;
+    
     z-index: 100;
 
 }
