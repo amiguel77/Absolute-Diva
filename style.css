@@ -1,0 +1,734 @@
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:Segoe UI,Tahoma,Geneva,Verdana,sans-serif;
+
+    background:#FFE2EC;
+
+    color:#ffffff;
+
+    overflow:hidden;
+
+    height:100vh;
+
+}
+
+/* BACKGROUND */
+#background{
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+    radial-gradient(circle at top left,#FFE2EC,transparent 35%),
+    radial-gradient(circle at bottom right,#FFF6FD,transparent 35%),
+    linear-gradient(135deg,#FFE2EC,#FFE2EC,#FFE2EC,#FFF6FD);
+
+    background-size:400% 400%;
+
+    animation:backgroundMove 18s ease infinite;
+
+    z-index:-5;
+
+}
+
+@keyframes backgroundMove{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+
+}
+
+/* STARS */
+#stars{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:-4;
+
+}
+
+/* CURSOR GLOW */
+#cursorGlow{
+
+    position:fixed;
+
+    width:260px;
+
+    height:260px;
+
+    border-radius:50%;
+
+    background:radial-gradient(circle,
+    rgba(124,58,237,.28),
+    transparent 70%);
+
+    transform:translate(-50%,-50%);
+
+    pointer-events:none;
+
+    filter:blur(25px);
+
+    z-index:-3;
+
+}
+
+/* APP */
+#app{
+
+    width:100%;
+
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+/* LANDING SCREEN */
+#landing{
+
+    width:90%;
+
+    max-width:430px;
+
+    padding:35px;
+
+    text-align:center;
+
+    border-radius:25px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    box-shadow:
+
+    0 20px 60px rgba(0,0,0,.45),
+
+    0 0 30px rgba(255, 188, 217, .8);
+
+    animation:floatCard 5s ease-in-out infinite;
+
+}
+
+@keyframes floatCard{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-10px);
+
+    }
+
+}
+
+.title{
+
+    font-size:42px;
+
+    margin-bottom:12px;
+
+}
+
+.subtitle{
+
+    color:#d1d5db;
+
+    margin-bottom:25px;
+
+    line-height:1.6;
+
+}
+
+/* INPUT */
+#nameInput{
+
+    width:100%;
+
+    padding:16px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:14px;
+
+    font-size:17px;
+
+    margin-bottom:18px;
+
+    transition:.3s;
+
+}
+
+#nameInput:focus{
+
+    transform:scale(1.03);
+
+    box-shadow:0 0 20px rgba(255, 188, 217, .4);
+
+}
+
+/* BUTTON */
+button{
+
+    width:100%;
+
+    padding:16px;
+
+    border:none;
+
+    border-radius:14px;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    color:white;
+
+    background:linear-gradient(135deg,#FFBCD9,#EE799B);
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 0 25px rgba(255, 188, 217, .6);
+
+}
+
+/* GIFT SCREEN */
+#giftScreen{
+
+    display:none;
+
+    position:absolute;
+
+    inset:0;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(238, 121, 155, .92);
+
+}
+
+/* MESSAGE SCREEN */
+#messageScreen{
+
+    display:none;
+
+    position:absolute;
+
+    inset:0;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    text-align:center;
+
+    background:#FFE2EC;
+
+    padding:25px;
+
+}
+
+#wishText{
+
+    font-size:55px;
+
+    margin-bottom:20px;
+
+    text-shadow:0 0 20px #FFBCD9;
+
+}
+
+#quote{
+
+    max-width:750px;
+
+    color:#cbd5e1;
+
+    font-size:20px;
+
+    margin-bottom:35px;
+
+}
+
+#shareBtn{
+
+    max-width:260px;
+
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+    .title{
+
+        font-size:32px;
+
+    }
+
+    #wishText{
+
+        font-size:34px;
+
+    }
+
+    #quote{
+
+        font-size:16px;
+
+    }
+
+}
+/* STARS */
+.star{
+
+    position:absolute;
+
+    width:2px;
+
+    height:2px;
+
+    border-radius:50%;
+
+    background:white;
+
+    box-shadow:
+    0 0 6px white,
+    0 0 12px white;
+
+    animation:twinkle 2s infinite alternate;
+
+}
+
+@keyframes twinkle{
+
+    from{
+
+        opacity:.2;
+
+        transform:scale(.8);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1.8);
+
+    }
+
+}
+/* SHOOTING STAR */
+.shootingStar{
+
+    position:fixed;
+
+    width:160px;
+
+    height:2px;
+
+    background:linear-gradient(to right,#fff,transparent);
+
+    border-radius:999px;
+
+    transform:rotate(-35deg);
+
+    filter:drop-shadow(0 0 8px white);
+
+    animation:shoot 2s linear forwards;
+
+    pointer-events:none;
+
+    z-index:-2;
+
+}
+
+@keyframes shoot{
+
+    from{
+
+        transform:translate(0,0) rotate(-35deg);
+
+        opacity:1;
+
+    }
+
+    to{
+
+        transform:translate(-700px,700px) rotate(-35deg);
+
+        opacity:0;
+
+    }
+
+}
+/* GIFT BOX */
+.giftBox{
+
+    position:relative;
+
+    width:180px;
+
+    height:180px;
+
+    cursor:pointer;
+
+    animation:giftFloat 2.5s ease-in-out infinite;
+
+    transition:.4s;
+
+}
+
+.box{
+
+    position:absolute;
+
+    bottom:0;
+
+    width:180px;
+
+    height:130px;
+
+    background:linear-gradient(135deg,#FFCEE5,#FFBCD9);
+
+    border-radius:0 0 18px 18px;
+
+    box-shadow:
+    0 0 30px rgba(238, 121, 155, .5);
+
+}
+
+.lid{
+
+    position:absolute;
+
+    top:15px;
+
+    left:-5px;
+
+    width:190px;
+
+    height:45px;
+
+    background:linear-gradient(135deg,#FFCEE5,#FFBCD9);
+
+    border-radius:12px;
+
+    transition:.7s;
+
+    transform-origin:left center;
+
+}
+
+.ribbonVertical{
+
+    position:absolute;
+
+    left:82px;
+
+    width:16px;
+
+    height:180px;
+
+    background:#FFF6FD;
+
+}
+
+.ribbonHorizontal{
+
+    position:absolute;
+
+    top:58px;
+
+    width:180px;
+
+    height:16px;
+
+    background:#FFF6FD;
+
+}
+
+@keyframes giftFloat{
+
+    0%,100%{
+
+        transform:translateY(0px);
+
+    }
+
+    50%{
+
+        transform:translateY(-12px);
+
+    }
+
+}
+/* GIFT HOVER */
+.giftBox:hover{
+
+    transform:scale(1.06);
+
+    filter:drop-shadow(0 0 25px #FFCEE5);
+
+}
+/* GLOW INSIDE GIFT */
+.giftBox::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    top:55%;
+
+    transform:translate(-50%,-50%);
+
+    width:120px;
+
+    height:120px;
+
+    border-radius:50%;
+
+    background:radial-gradient(circle,
+    rgba(255,255,180,.35),
+    transparent 70%);
+
+    animation:giftGlow 2s infinite;
+
+}
+
+@keyframes giftGlow{
+
+    0%,100%{
+
+        opacity:.3;
+
+        transform:translate(-50%,-50%) scale(.9);
+
+    }
+
+    50%{
+
+        opacity:1;
+
+        transform:translate(-50%,-50%) scale(1.2);
+
+    }
+
+}
+/* FLOATING HEARTS */
+.heart{
+
+    position:fixed;
+
+    font-size:22px;
+
+    pointer-events:none;
+
+    animation:heartFly 3s linear forwards;
+
+    z-index:9999;
+
+}
+
+@keyframes heartFly{
+
+    0%{
+
+        opacity:1;
+
+        transform:
+        translateY(0)
+        scale(.8);
+
+    }
+
+    100%{
+
+        opacity:0;
+
+        transform:
+        translateY(-250px)
+        translateX(var(--x))
+        rotate(360deg)
+        scale(1.8);
+
+    }
+
+}
+/* FLASH EFFECT */
+.flash{
+
+    position:fixed;
+
+    inset:0;
+
+    background:white;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    z-index:99999;
+
+}
+
+.flash.active{
+
+    animation:flash .4s;
+
+}
+
+@keyframes flash{
+
+    0%{
+
+        opacity:0;
+
+    }
+
+    40%{
+
+        opacity:.8;
+
+    }
+
+    100%{
+
+        opacity:0;
+
+    }
+
+}
+/* FIREWORK PARTICLES */
+.firework{
+
+    position:fixed;
+
+    width:8px;
+
+    height:8px;
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+    animation:explode 1s ease-out forwards;
+
+    z-index:9999;
+
+}
+
+@keyframes explode{
+
+    from{
+
+        opacity:1;
+
+        transform:
+        translate(0,0)
+        scale(1);
+
+    }
+
+    to{
+
+        opacity:0;
+
+        transform:
+        translate(var(--x),var(--y))
+        scale(0);
+
+    }
+
+}
+/* MESSAGE ZOOM */
+.zoomIn{
+
+    animation:zoomIn .8s ease;
+
+}
+
+@keyframes zoomIn{
+
+    from{
+
+        transform:scale(.7);
+
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:scale(1);
+
+        opacity:1;
+
+    }
+
+}
+/* FOOTER */
+.made-with-love {
+    position: fixed;
+    bottom: 15px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #FFBCD9;
+    z-index: 100;
+
+}
