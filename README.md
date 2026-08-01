@@ -2,7 +2,7 @@
 
 Hihi! Welcome to your very own special little corner of the internet. 
 
-This cute little web app was built specifically for **ms prime minister 😍☝🏼 da princesa** for da smileyy and lowest cortisol on Friendship Day!
+This cute little web app was built specifically for **ms prime minister 😍☝🏼 da princesa** **AVTANSHA CHAN** for da smileyy and lowest cortisol on Friendship Day!
 
 ## 🎀 What's Inside?
 
