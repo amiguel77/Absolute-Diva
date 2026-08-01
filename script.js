@@ -116,9 +116,15 @@ giftBox.addEventListener("click", () => {
     giftOpenSound.currentTime = 0;
     giftOpenSound.play();
 
+    giftLid.classList.add("lid-shake");
+
     const name = nameInput.value.trim();
 
-    giftLid.style.transform = "translateY(-55px) rotate(-10deg)";
+    setTimeout(() => {
+        giftLid.classList.remove("lid-shake");
+        giftLid.style.transform = "translateY(-55px) rotate(-10deg)";
+    }, 300);
+});
 
     setTimeout(() => {
 
