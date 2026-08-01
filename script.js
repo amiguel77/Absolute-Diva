@@ -49,7 +49,6 @@ Anim.pressScale(surpriseBtn);
 
 const giftBox = document.querySelector(".giftBox");
 const giftLid = document.querySelector(".lid");
-Anim.giftWiggle(giftBox, { loop: true });
 
 const wishText = document.getElementById("wishText");
 const shareBtn = document.getElementById("shareBtn");
