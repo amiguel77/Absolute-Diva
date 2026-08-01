@@ -125,3 +125,69 @@ button:hover{
     box-shadow:0 0 25px rgba(255, 188, 217, .55);
 
 }
+
+/* Typewriter blinking cursor */
+.typing-cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1em;
+    background: #FFF6FD;
+    margin-left: 2px;
+    animation: blinkCursor 0.8s step-end infinite;
+    vertical-align: text-bottom;
+}
+@keyframes blinkCursor {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+/* Letter fade-in */
+.letter-fade {
+    display: inline-block;
+    opacity: 0;
+    animation: letterFadeIn 0.6s ease forwards;
+}
+@keyframes letterFadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Tilt-in on load */
+#landing {
+    animation: tiltIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+@keyframes tiltIn {
+    from { opacity: 0; transform: translate(-50%, -50%) rotate(-6deg) scale(0.9); }
+    to   { opacity: 1; transform: translate(-50%, -50%) rotate(0deg) scale(1); }
+}
+
+/* Glass shatter reveal (for gift/message screens) */
+.shatter-in {
+    animation: shatterIn 0.7s ease forwards;
+}
+@keyframes shatterIn {
+    0%   { opacity: 0; clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%); filter: blur(6px); }
+    60%  { opacity: 1; filter: blur(1px); }
+    100% { opacity: 1; clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); filter: blur(0); }
+}
+
+input:focus {
+    box-shadow: 0 0 0 3px rgba(255, 188, 217, 0.6), 0 0 20px rgba(255, 188, 217, 0.4);
+    transition: box-shadow 0.3s;
+}
+
+.shake {
+    animation: shakeInput 0.4s ease;
+}
+@keyframes shakeInput {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-8px); }
+    40%, 80% { transform: translateX(8px); }
+}
+
+.fade-out {
+    animation: fadeOutScreen 0.4s ease forwards;
+}
+@keyframes fadeOutScreen {
+    to { opacity: 0; }
+}
