@@ -205,3 +205,34 @@
 
   window.Anim = Anim;
 })();
+
+function letterFadeIn(el, text, { stepMs = 45 } = {}) {
+    if (!el) return;
+    el.innerHTML = "";
+    [...text].forEach((char, i) => {
+        const span = document.createElement("span");
+        span.className = "letter-fade";
+        span.style.animationDelay = (i * stepMs) + "ms";
+        span.textContent = char === " " ? "\u00A0" : char;
+        el.appendChild(span);
+    });
+}
+
+function addTypingCursor(el) {
+    if (!el) return;
+    const cursor = document.createElement("span");
+    cursor.className = "typing-cursor";
+    el.appendChild(cursor);
+    return cursor;
+}
+
+function fadeSwitchScreen(hideEl, showEl, { duration = 400 } = {}) {
+    if (!hideEl || !showEl) return;
+    hideEl.classList.add("fade-out");
+    setTimeout(() => {
+        hideEl.style.display = "none";
+        hideEl.classList.remove("fade-out");
+        showEl.style.display = "flex";
+        showEl.classList.add("shatter-in");
+    }, duration);
+}
