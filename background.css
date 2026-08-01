@@ -74,3 +74,51 @@
     }
 
 }
+
+/* Drifting Particles */
+.particle {
+    position: fixed;
+    bottom: -10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 6px rgba(255, 182, 217, 0.9);
+    pointer-events: none;
+    animation: driftUp linear forwards;
+    z-index: -1;
+}
+@keyframes driftUp {
+    0%   { transform: translateY(0) translateX(0); opacity: 0; }
+    10%  { opacity: 1; }
+    100% { transform: translateY(-100vh) translateX(30px); opacity: 0; }
+}
+
+/* Cursor Heart Trail */
+.cursor-heart {
+    position: fixed;
+    font-size: 14px;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    animation: heartFade 0.9s ease-out forwards;
+    z-index: 9999;
+}
+@keyframes heartFade {
+    0%   { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+    100% { opacity: 0; transform: translate(-50%, -120%) scale(0.5); }
+}
+
+/* Ripple */
+.ripple {
+    position: fixed;
+    width: 12px;
+    height: 12px;
+    border: 2px solid rgba(255, 182, 217, 0.9);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    animation: rippleExpand 0.7s ease-out forwards;
+    z-index: 9998;
+}
+@keyframes rippleExpand {
+    0%   { width: 12px; height: 12px; opacity: 1; }
+    100% { width: 80px; height: 80px; opacity: 0; }
+}
