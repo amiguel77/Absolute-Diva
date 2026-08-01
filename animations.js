@@ -201,6 +201,9 @@
     floatHeart,
     confettiBurst,
     sparkleTwinkle,
+    addTypingCursor,
+    letterFadeIn,
+    fadeSwitchScreen,
   };
 
   window.Anim = Anim;
