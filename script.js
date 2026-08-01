@@ -90,7 +90,7 @@ surpriseBtn.addEventListener("click", () => {
 
     if (name === "") {
 
-        alert("Hihi Princesa Chan type your name 😍☝🏼");
+        alert("Hihi Princesa Chan type your name :)");
         return;
 
     }
