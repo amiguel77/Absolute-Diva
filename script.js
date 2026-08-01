@@ -118,7 +118,7 @@ giftBox.addEventListener("click", () => {
         bgMusic.volume = 0.15;
         messageScreen.classList.add("zoomIn");
 
-        typeMessage(`Happy Friendship Day ${name} 😍☝🏼`);
+        typeMessage(`Happy Friendship Day ${name} :)`);
 
         launchConfetti();
 
