@@ -44,12 +44,16 @@ const messageScreen = document.getElementById("messageScreen");
 
 const nameInput = document.getElementById("nameInput");
 const surpriseBtn = document.getElementById("surpriseBtn");
+Anim.pulseGlow(surpriseBtn);
+Anim.pressScale(surpriseBtn);
 
 const giftBox = document.querySelector(".giftBox");
 const giftLid = document.querySelector(".lid");
+Anim.giftWiggle(giftBox, { loop: true });
 
 const wishText = document.getElementById("wishText");
 const shareBtn = document.getElementById("shareBtn");
+Anim.pressScale(shareBtn);
 
 const cursorGlow = document.getElementById("cursorGlow");
 const stars = document.getElementById("stars");
@@ -99,6 +103,8 @@ surpriseBtn.addEventListener("click", () => {
 
     giftScreen.style.display = "flex";
 
+    Anim.floatHeart(giftScreen, { count: 8 });
+
 });
 
 // OPEN GIFT
@@ -117,6 +123,7 @@ giftBox.addEventListener("click", () => {
         messageScreen.style.display = "flex";
         bgMusic.volume = 0.15;
         messageScreen.classList.add("zoomIn");
+        Anim.blurReveal(wishText, { duration: 900 });
 
         typeMessage(`Happy Friendship Day ${name} :)`);
 
