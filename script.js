@@ -93,7 +93,9 @@ surpriseBtn.addEventListener("click", () => {
     const name = nameInput.value.trim();
 
     if (name === "") {
-
+        
+        nameInput.classList.add("shake");
+        setTimeout(() => nameInput.classList.remove("shake"), 400);
         alert("Hihi Princesa Chan type your name :)");
         return;
 
@@ -102,6 +104,8 @@ surpriseBtn.addEventListener("click", () => {
     landing.style.display = "none";
 
     giftScreen.style.display = "flex";
+
+    giftScreen.classList.add("shatter-in");
 
     Anim.floatHeart(giftScreen, { count: 8 });
 
@@ -121,6 +125,7 @@ giftBox.addEventListener("click", () => {
         giftScreen.style.display = "none";
 
         messageScreen.style.display = "flex";
+        messageScreen.classList.add("shatter-in");
         bgMusic.volume = 0.15;
         messageScreen.classList.add("zoomIn");
         Anim.blurReveal(wishText, { duration: 900 });
@@ -138,17 +143,21 @@ function typeMessage(text) {
 
     wishText.innerHTML = "";
 
+    const cursor = Anim.addTypingCursor(wishText);
+
     let i = 0;
 
     const typing = setInterval(() => {
 
-        wishText.innerHTML += text.charAt(i);
+        cursor.insertAdjacentText("beforebegin", text.charAt(i));
 
         i++;
 
         if (i >= text.length) {
 
             clearInterval(typing);
+
+            setTimeout(() => cursor.remove(), 1500); // cursor blinks a bit then disappears
 
         }
 
