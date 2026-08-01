@@ -113,3 +113,35 @@
     }
 
 }
+
+/* Soft glow pulse around the gift, invites clicking */
+.gift-box {
+    filter: drop-shadow(0 0 0px rgba(255, 188, 217, 0));
+    animation: giftFloat 2.5s ease-in-out infinite,
+               giftGlow 2s ease-in-out infinite;
+}
+@keyframes giftGlow {
+    0%, 100% { filter: drop-shadow(0 0 6px rgba(255, 188, 217, 0.4)); }
+    50%      { filter: drop-shadow(0 0 18px rgba(255, 188, 217, 0.8)); }
+}
+
+/* Ribbon shimmer */
+.gift-ribbon-v, .gift-ribbon-h {
+    background: linear-gradient(90deg, #FFE2EC, #FFFFFF, #FFE2EC);
+    background-size: 200% auto;
+    animation: ribbonShine 3s linear infinite;
+}
+@keyframes ribbonShine {
+    0%   { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* Lid pop + tremble right before it fully opens (call via JS before the -55px translate) */
+.lid-shake {
+    animation: lidTremble 0.3s ease-in-out 2;
+}
+@keyframes lidTremble {
+    0%, 100% { transform: rotate(0deg); }
+    25%      { transform: rotate(-3deg); }
+    75%      { transform: rotate(3deg); }
+}
