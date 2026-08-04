@@ -15,5 +15,5 @@ Every single line of code, color choice, and sound effect was handpicked for yaa
 <br>
 
 <p align="center">
-  <b>Made with ♥️ by Harsh for da princesa</b>
+  <b>Made with ♥️ by André for da princesa</b>
 </p>
